@@ -1,8 +1,15 @@
-.container {
+.header {
+    padding: 14px 0 12px 0;
+}
+
+.container, .home__container, .hero__container {
     width: 100%;
-    max-width: 300px;
+    max-width: 1194px;
     margin: 0 auto;
-    padding: 20px;
+    padding:0 20px 0 20px;
+}
+.container {
+    max-width: 300px;
 }
 
 .registration__container {
@@ -10,4 +17,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.home__container {
+    display: flex;
+    justify-content: space-between;
 }

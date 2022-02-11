@@ -1,0 +1,48 @@
+.home-logo {
+    max-width: 226px;
+    width: 100%;
+}
+
+.home__nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 890px;
+    width: 100%;
+}
+
+.search-books {
+    background: #F8FAFD;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    max-width: 670px;
+    width: 100%;
+    padding-left: 16px;
+}
+
+.search-btn {
+    margin-right: 10px;
+}
+
+.search-input {
+    max-width: 600px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 100%;
+    font-family: 'Rubik',sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000;
+}
+
+.nav-left {
+    max-width: 137px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

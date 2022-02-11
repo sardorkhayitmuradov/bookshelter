@@ -12,10 +12,41 @@
     <title>Bookshelter</title>
 </head>
 <body>
-    <section class="main">
-        <div class="container main__container">
-            
+    <header class="header">
+        <div class="home__container">
+            <a href="./home.html" class="home-logo">
+                <img src="./images/home-logo.svg" alt="Home logo" width="226" height="44">
+            </a>
+            <nav class="home__nav">
+                <div class="search-books">
+                    <a href=""><img src="./images/search.svg" alt="Search Books" width="19" height="19" class="search-btn"></a>
+                    <input class="search-input" type="text" name="search" placeholder="Search books">
+                </div>
+                <div class="nav-left">
+                    <a href="#">
+                        <img src="./images/light.svg" alt="Night Mode" width="23" height="23" class="nightmode">
+                    </a>
+                    <button class="button homeLoginOut" type="submit">Logout</button>
+                </div>
+            </nav>
         </div>
-    </section>
+    </header>
+    <main class="main">
+        <section class="hero">
+            <div class="hero__container">
+                <p class="hero__desc">Showing 18 Result(s)</p>
+                
+                <div class="hero__ordering">
+                    <img src="./images/calendar.png" alt="Order Newest" width="24" height="24" class="hero__calendar">
+                    <button class="hero__btn order-btn" type="submit">Order by newest</button>
+                </div>
+            </div>
+        </section>
+        <section class="bookmarks">
+            <div class="bookmarks__container">
+                
+            </div>
+        </section>
+    </main>
 </body>
 </html>
