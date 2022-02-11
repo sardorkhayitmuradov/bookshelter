@@ -2,7 +2,7 @@
     padding: 14px 0 12px 0;
 }
 
-.container, .home__container, .hero__container {
+.container, .home__container, .hero__container, .book-items__container {
     width: 100%;
     max-width: 1194px;
     margin: 0 auto;
@@ -19,7 +19,7 @@
     justify-content: center;
 }
 
-.home__container {
+.home__container, .book-items__container {
     display: flex;
     justify-content: space-between;
 }

@@ -379,7 +379,7 @@ img {
   padding: 14px 0 12px 0;
 }
 
-.container, .home__container, .hero__container {
+.container, .home__container, .hero__container, .book-items__container {
   width: 100%;
   max-width: 1194px;
   margin: 0 auto;
@@ -406,7 +406,7 @@ img {
           justify-content: center;
 }
 
-.home__container {
+.home__container, .book-items__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -735,5 +735,59 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.book-items__container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bookmarks__heading, .bookmarks__desc {
+  max-width: 125px;
+  width: 100%;
+  font-family: 'Rubik',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.bookmarks__desc {
+  max-width: 218px;
+  font-size: 14px;
+  line-height: 155.6%;
+}
+
+.card {
+  max-width: 991px;
+  width: 100%;
+}
+
+.card-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid black;
+  list-style: none;
+  margin: 0;
+  padding: 40px;
+}
+
+.card-item {
+  max-width: 282px;
+  width: 100%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 13px 15px 13px 18px;
 }
 /*# sourceMappingURL=main.css.map */
