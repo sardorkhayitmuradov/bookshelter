@@ -377,14 +377,226 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1157px;
+  max-width: 300px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.registration__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.registration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../images/bg-login.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.username, .email, .btn {
+  width: 100%;
+  height: 45px;
+}
+
+.username, .email {
+  width: 100%;
+  color: #FFFFFF;
+}
+
+.btn {
+  margin-bottom: 11px;
+}
+
+.username, .email {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+
+.username::-webkit-input-placeholder, .email::-webkit-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+.username:-ms-input-placeholder, .email:-ms-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+.username::-ms-input-placeholder, .email::-ms-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+.username::placeholder, .email::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+:-ms-input-placeholder {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+::-ms-input-placeholder {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+::placeholder {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+::-webkit-input-placeholder:active {
+  background-color: transparent;
+}
+
+:-ms-input-placeholder:active {
+  background-color: transparent;
+}
+
+::-ms-input-placeholder:active {
+  background-color: transparent;
+}
+
+::placeholder:active {
+  background-color: transparent;
+}
+
+.useremail__text, .username__text {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 300px;
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border: 1px solid #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.user, .lock {
+  line-height: 45px;
+  top: 13px;
+  left: 12px;
+}
+
+.btn {
+  width: 300px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0D75FF;
+  cursor: pointer;
+}
+
+.registration-forgot {
+  text-decoration: none;
+  font-family: 'Montserrat' ,sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */

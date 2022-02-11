@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noticia+Text&family=Noto+Sans&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <title>Bookshelter</title>
   </head>
   <body>
     <section class="registration">
       <div class="container registration__container">
-        <form action="" method="post">
+        <form action="" method="post" class="form">
           <div class="regitration__logo">
-            <img src="" alt="Login Logo" class="logo" />
+            <img src="./images/login-logo.png" alt="Login Logo" class="logo" width="226" height="44"/>
           </div>
           <div class="username__text">
+            <img src="./images/user.png" alt="user-img" width="20" height="20" class="user">
             <input
               type="text"
               class="username"
@@ -24,15 +29,17 @@
             />
           </div>
           <div class="useremail__text">
+            <img src="./images/lock.png" alt="lock-img" width="20" height="20" class="lock">
             <input
               type="email"
-              class="useremail"
+              class="email"
               name="email"
               required
               placeholder="Email"
             />
           </div>
           <button class="btn" type="submit">Login</button>
+          <a class="registration-forgot">Forgot password?</a>
         </form>
       </div>
     </section>

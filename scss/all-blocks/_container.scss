@@ -1,6 +1,13 @@
 .container {
     width: 100%;
-    max-width: 1157px;
+    max-width: 300px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.registration__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
