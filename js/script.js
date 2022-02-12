@@ -3,86 +3,62 @@ let elBookResult = document.querySelector(".book-result");
 let elBookLists = document.querySelector(".card-items");
 let elSearchInput = document.querySelector(".search-input")
 let elLogOutBtn = document.querySelector(".homeLoginOut");
+let elOrderBtn = document.querySelector(".order-btn");
 
+
+let elModal = document.querySelector(".book-modal")
+let elModalRightContainer = document.querySelector(".modal-container")
 let elBookmarkBtn = document.querySelector(".bookmark-btn");
 let elReadBtn = document.querySelector(".read")
 let elBookmarkList = document.querySelector(".bookmarks-items");
 let elModalTitle = document.querySelector(".modal-title");
+let elAuthor = document.querySelector(".author")
 let elModalCancel = document.querySelector('.modal-cancel');
 let elModalImg = document.querySelector(".modal-img");
 let elModalDesc = document.querySelector(".modal-desc");
 let elModalAuthor = document.querySelector(".author");
 let elModalAuthorItem = document.querySelector(".author-item");
 
-let bookmarkLocalStorage = JSON.parse(window.localStorage.getItem("bookmarks"));
-let bookmarks = bookmarkLocalStorage || [];
+const bookmarkLocal = JSON.parse(window.localStorage.getItem("bookmarks"));
+const bookmarks = bookmarkLocal || [];
 
 const API_KEY = `https://www.googleapis.com/books/v1/volumes?q=`;
 let search = "";
 const page = 1;
-let apiElement;
-const renderBookmarks = function  (bookmarks) {
-
-    for(let bookmark of bookmarks ) {
-        // Getting bookmarks
-        let newItem = document.createElement('li');
-        let newBookmarkInfo = document.createElement('div');
-        let newBookmarkIcons = document.createElement('div');
-        let newBookmarkItemHeading = document.createElement('h3');
-        let newBookmarkItemDesc = document.createElement('p');
-        let newBookmarkItemReadInfoBtn = document.createElement('a');
-        let newBookmarkItemReadInfoBtnIcon = document.createElement('img');
-        let newBookmarkItemDeleteBtn = document.createElement('a');
-        let newBookmarkItemDeleteBtnIcon = document.createElement('img');
-
-        //SET ATTRIBUTE
-        newItem.setAttribute("class", "bookmark-item");
-        newBookmarkInfo.setAttribute("class", "bookmark-info");
-        newBookmarkIcons.setAttribute("class", "bookmark-icons");
-        newBookmarkItemHeading.setAttribute("class", "book-item__heading");
-        newBookmarkItemDesc.setAttribute("class", "book-item__desc");
-        newBookmarkItemReadInfoBtn.setAttribute("class", "read-icon");
-        newBookmarkItemReadInfoBtnIcon.setAttribute("class", "bookmark-read-img");
-        newBookmarkItemDeleteBtn.setAttribute("class", "delete-icon");
-        newBookmarkItemDeleteBtnIcon.setAttribute("class", "bookmark-delete-img");
+let order = "";
 
 
-        //TEXT CONTENT
-        newBookmarkItemHeading.textContent = bookmark.
-        newBookmarkItemDesc.textContent = book.
+const renderBookmarks =  (arr, element) =>{
+    element.innerHTML = null;
 
-        //Append Child
-        newItem.appendChild(newBookmarkInfo)
-        newItem.appendChild(newBookmarkIcons)
-        newBookmarkInfo.appendChild(newBookmarkItemHeading)
-        newBookmarkInfo.appendChild(newBookmarkItemDesc)
-        newBookmarkIcons.appendChild(newBookmarkItemReadInfoBtn)
-        newBookmarkIcons.appendChild(newBookmarkItemDeleteBtn)
-        newBookmarkItemReadInfoBtn.appendChild(newBookmarkItemReadInfoBtnIcon)
-        newBookmarkItemDeleteBtn.appendChild(newBookmarkItemDeleteBtnIcon)
-    }
-}
+    arr.forEach(book => {
+        const html = `
+                <li class="bookmark-item">
+                    <div class="bookmark-info">
+                        <h3 class="card-item__title book-item__heading">${book.volumeInfo.title}</h3>
+                        <p class="card-item__desc book-item__desc">${
+                            book.volumeInfo.authors == undefined
+                              ? "Author not found"
+                              : book.volumeInfo.authors
+                          }</p>
+                    </div>
+                    <div class="bookmark-icons">
+                        <a href="#" class="read-icon">
+                            <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                        </a>
+                        <a href="#" class="delete-icon">
+                            <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                        </a>
+                    </div>
+                </li>
+        `;
+        element.insertAdjacentHTML("beforeend" , html)
+    });
+};
+renderBookmarks(bookmarks, elBookmarkList);
 
-// renderBookmarks()
+// renderBookmarks
 let arrayBookmark = [];
-
-
-// ASYNC FUNTION:
-const getBooks  = async function (book) {
-    let response = await fetch (API_KEY + book);
-    
-    let data = await response.json();
-    elBookResult.textContent = data.totalItems || 0;
-    
-    renderBooks(data.items, elBookLists)
-    // console.log(apiElement);
-    if(data.response === true && data.book.length > 1){
-        renderBooks(apiElement, elBookLists);
-    }
-    
-}
-getBooks("python")
-
 
 const renderBooks = (array ) =>{
     elBookLists.innerHTML = null;
@@ -142,39 +118,84 @@ const renderBooks = (array ) =>{
                 alert("Xato !!!");
             }
         })  
-     
-        
 }
- 
+
+// ASYNC FUNTION:
+const getBooks  = async function (book) {
+    
+    let response = await fetch (API_KEY + book + order);
+    
+    let data = await response.json();
+    elBookResult.textContent = data.totalItems;
+
+    renderBooks(data.items, elBookLists);
+
+    // renderPagination(data, elPagination)
+
+    elBookLists.addEventListener("click", (evt) => {
+        if (evt.target.matches(".bookmark-btn")) {
+            let bookmarkId = evt.target.dataset.btnBookMark ;
+            const foundFilm = data.items.find(book => bookmarkId == book.id)
+            if(!bookmarks.includes(foundFilm)){
+                if (foundFilm != undefined) {
+                    bookmarks.push(foundFilm);
+                }
+            } else{
+                alert("Already added !!");
+            }
+            renderBookmarks(bookmarks, elBookmarkList);
+            window.localStorage.setItem("bookmarks" , JSON.stringify(bookmarks))
+        }   
+            if (element.id == evt.target.dataset.bookmark) {
+                elBookmarkList.innerHTML = null;
+                arrayBookmark.push({
+                id: element.id,
+                title: element.volumeInfo.title,
+                author: element.volumeInfo.authors?.join(", "),
+              });
+      
+              // *
+      
+              arrayBookmark.forEach((element) => {
+                // Create item for bookmark:
+                let bookItem = document.createElement("li");
+      
+                // set atribute book items:
+                bookItem.setAttribute("class", "bookmark-item");
+      
+                //  Append bookmark to bookmark list:
+                elBookmarkList.appendChild(bookItem);
+      
+                bookItem.innerHTML = `
+                        <div class="bookmark-info">
+                            <h3 class="card-item__title book-item__heading">${(elModalTitle.textContent =
+                            element.title)}</h3>
+                            <p class="card-item__desc book-item__desc">${(elModalAuthor.textContent =
+                            element.author)}</p>
+                        </div>
+                        <div class="bookmark-icons">
+                            <a href="#" class="read-icon">
+                                <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                            </a>
+                            <a href="#" class="delete-icon">
+                                <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                            </a>
+                        </div>`;
+              });
+            };  
+    });
+};
+getBooks("python")
+
+const closeModal = () => {
+    elModal.classList.add("hidden");
+};
 
 elSearchInput.addEventListener("change", ()=> {
     search = elSearchInput.value;
     getBooks(search);
 });
     
-    
-elBookLists.addEventListener("click" , function(evt) {
-    const isBookmarkBtn = evt.target.matches(".bookmark-btn")
-        if(isBookmarkBtn){
-            // const bookId = evt.target.dataset.bookId
-            
-            apiElement.forEach(item => {
-                if(item.id == evt.target.dataset.bookmarkIdBtn){
-                    arrayBookmark.push({    
-                })
-                }
-        })
-    }
-})
-    
-// elBookLists.addEventListener("click", function(evt) {
-//     if(evt.target.matches(".bookmark-btn")){
-//         const bookmarkIdBtn = evt.target.dataset.bookmarkBtnId;
-//         const getBooksElement = getBooks();
-//         const foundElement = [...getBooksElement]
-//         console.log(foundElement);
-//     }
-// })
     
 const localToken = window.localStorage.getItem("token");
 
@@ -188,6 +209,7 @@ elLogOutBtn.addEventListener("click", function () {
   window.location.replace("index.html");
 });
 
-//MODAL !!!!!!!!!!
-
-
+elOrderBtn.addEventListener("click", () => {
+    order = "&orderBy=newest";
+    getBooks();
+});
