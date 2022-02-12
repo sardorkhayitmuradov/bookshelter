@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <title>Bookshelter</title>
 </head>
-<body>
+<body class="body">
     <header class="header">
         <div class="home__container">
             <a href="./home.html" class="home-logo">
                 <img src="./images/home-logo.svg" alt="Home logo" width="226" height="44">
-            </a>
+            </a>-
             <nav class="home__nav">
                 <div class="search-books">
                     <a href=""><img src="./images/search.svg" alt="Search Books" width="19" height="19" class="search-btn"></a>
@@ -34,7 +34,7 @@
     <main class="main">
         <section class="hero">
             <div class="hero__container">
-                <p class="hero__desc">Showing 18 Result(s)</p>
+                <p class="hero__desc">Showing <span class="book-result">18</span> Results</p>
                 
                 <div class="hero__ordering">
                     <img src="./images/calendar.png" alt="Order Newest" width="24" height="24" class="hero__calendar">
@@ -42,61 +42,183 @@
                 </div>
             </div>
         </section>
-        <section class="book-items">
+        <section class="book-items">   
             <div class="book-items__container">
                 <div class="bookmarks">
                     <h2 class="bookmarks__heading">
                         Bookmarks
                     </h2>
                     <p class="bookmarks__desc">
-                        If you don’t like to read, you haven’t found the right book
+                        If you don't like to read, you haven't found the right book
                     </p>
+                    <ul class="bookmarks-items">
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="bookmark-item">
+                            <div class="bookmark-info">
+                                <h3 class="card-item__title book-item__heading">Python</h3>
+                                <p class="card-item__desc book-item__desc">David M. Beazley</p>
+                            </div>
+                            <div class="bookmark-icons">
+                                <a href="#" class="read-icon">
+                                    <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
+                                </a>
+                                <a href="#" class="delete-icon">
+                                    <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="card">
                     <ul class="card-items">
-                        <li class="card-item">
-                            <div class="card-item-img">
-                                <img src="./images/card-img.jpg" alt="Book Images" class="item-images">
-                            </div>
-                            <h3 class="card-item__title">Python</h3>
-                            <p class="card-item__desc">David M. Beazley</p>
-                            <span class="card-item-year">2009</span>
-                            <div class="card-item-info">
-                                <button class="bookmark-btn"  type="submit">Bookmark</button>
-                                <button class="more-info"  type="submit">More Info</button>
-                            </div>
-                            <button class="read" type="submit">Read</button>
-                        </li>
-                        <li class="card-item">
-                            <div class="card-item-img">
-                                <img src="./images/card-img.jpg" alt="Book Images" class="item-images">
-                            </div>
-                            <h3 class="card-item__title">Python</h3>
-                            <p class="card-item__desc">David M. Beazley</p>
-                            <span class="card-item-year">2009</span>
-                            <div class="card-item-info">
-                                <button class="bookmark-btn"  type="submit">Bookmark</button>
-                                <button class="more-info"  type="submit">More Info</button>
-                            </div>
-                            <button class="read" type="submit">Read</button>
-                        </li>
-                        <li class="card-item">
-                            <div class="card-item-img">
-                                <img src="./images/card-img.jpg" alt="Book Images" class="item-images">
-                            </div>
-                            <h3 class="card-item__title">Python</h3>
-                            <p class="card-item__desc">David M. Beazley</p>
-                            <span class="card-item-year">2009</span>
-                            <div class="card-item-info">
-                                <button class="bookmark-btn"  type="submit">Bookmark</button>
-                                <button class="more-info"  type="submit">More Info</button>
-                            </div>
-                            <button class="read" type="submit">Read</button>
-                        </li>
+                            <!-- <li class="card-item">
+                                <div class="card-item-img">
+                                    <img src="./images/card-img.jpg" alt="Book Images" class="item-images" width="201" height="202"> 
+                                </div>
+                                <h3 class="card-item__title">Python</h3>
+                                <p class="card-item__desc">David M. Beazley</p>
+                                <span class="card-item-year">2009</span>
+                                <div class="card-item-info">
+                                    <button class="bookmark-btn"  type="submit">Bookmark</button>
+                                    <button class="more-info"  type="submit">More Info</button>
+                                </div>
+                                <button class="read" type="submit">Read</button>
+                            </li> -->
                     </ul>
                 </div>
             </div>
         </section>
+        <section class="book-modal" style="display: none;">
+            <div class="hidden"></div>
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3 class="modal-title">Python</h3>
+                    <img src="./images/cancel.svg" alt="Modal Cancel" width="15" height="15" class="modal-cancel">
+                </div>
+                <img src="./images/modal-img.jpg" alt="Modal book image" width="229" height="300" class="modal-img">
+                <p class="modal-desc">Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis Lorem.</p>
+                <div class="modal-author">
+                    <p class="author">Author :</p>
+                    <div class="info-style">
+                        <p class="author-item">Jamal Kasper</p>
+                    </div>
+                    <div class="info-style">
+                        <p class="author-item">Author 2</p>
+                    </div>
+                </div>
+                <div class="modal-published">
+                    <p class="published">Published : </p>
+                    <div class="info-style">
+                        <p class="published-item">2019</p>
+                    </div>
+                </div>
+                <div class="modal-publishers">
+                    <p class="publishers">Publishers : </p>
+                    <div class="info-style">
+                        <p class="publishers-item">Hollman</p>
+                    </div>
+                </div>
+                <div class="modal-categories">
+                    <p class="categories">Categories : </p>
+                    <div class="info-style">
+                        <p class="categories-item">Computers</p>
+                    </div>
+                </div>
+                <div class="modal-pages">
+                    <p class="pages">Pages Count: </p>
+                    <div class="info-style">
+                        <p class="pages-item">346</p>
+                    </div>
+                </div>
+                <footer class="footer-container">
+                    <button class="read modal-read">Read</button>
+                </footer>
+            </div>
+        </section>
     </main>
+    <script src="./js/script.js"></script>
 </body>
 </html>
