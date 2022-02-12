@@ -55,7 +55,6 @@ const renderBookmarks =  (arr, element) =>{
         element.insertAdjacentHTML("beforeend" , html)
     });
 };
-renderBookmarks(bookmarks, elBookmarkList);
 
 // renderBookmarks
 let arrayBookmark = [];
@@ -129,13 +128,12 @@ const getBooks  = async function (book) {
     elBookResult.textContent = data.totalItems;
 
     renderBooks(data.items, elBookLists);
-
     // renderPagination(data, elPagination)
 
     elBookLists.addEventListener("click", (evt) => {
         if (evt.target.matches(".bookmark-btn")) {
             let bookmarkId = evt.target.dataset.btnBookMark ;
-            const foundFilm = data.items.find(book => bookmarkId == book.id)
+            const foundFilm = data.items.find(() => bookmarkId == data.items.id)
             if(!bookmarks.includes(foundFilm)){
                 if (foundFilm != undefined) {
                     bookmarks.push(foundFilm);
@@ -143,46 +141,9 @@ const getBooks  = async function (book) {
             } else{
                 alert("Already added !!");
             }
-            renderBookmarks(bookmarks, elBookmarkList);
+            renderBookmarks(data.items, elBookmarkList);
             window.localStorage.setItem("bookmarks" , JSON.stringify(bookmarks))
-        }   
-            if (element.id == evt.target.dataset.bookmark) {
-                elBookmarkList.innerHTML = null;
-                arrayBookmark.push({
-                id: element.id,
-                title: element.volumeInfo.title,
-                author: element.volumeInfo.authors?.join(", "),
-              });
-      
-              // *
-      
-              arrayBookmark.forEach((element) => {
-                // Create item for bookmark:
-                let bookItem = document.createElement("li");
-      
-                // set atribute book items:
-                bookItem.setAttribute("class", "bookmark-item");
-      
-                //  Append bookmark to bookmark list:
-                elBookmarkList.appendChild(bookItem);
-      
-                bookItem.innerHTML = `
-                        <div class="bookmark-info">
-                            <h3 class="card-item__title book-item__heading">${(elModalTitle.textContent =
-                            element.title)}</h3>
-                            <p class="card-item__desc book-item__desc">${(elModalAuthor.textContent =
-                            element.author)}</p>
-                        </div>
-                        <div class="bookmark-icons">
-                            <a href="#" class="read-icon">
-                                <img src="./images/read.svg" alt="Bookmark read Button" class="bookmark-read-img">
-                            </a>
-                            <a href="#" class="delete-icon">
-                                <img src="./images/delete 1.svg" alt="Bookmark delete Button" class="bookmark-delete-img">
-                            </a>
-                        </div>`;
-              });
-            };  
+        }         
     });
 };
 getBooks("python")
