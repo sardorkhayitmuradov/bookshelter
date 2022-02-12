@@ -27,7 +27,7 @@ elForm.addEventListener("submit", function (evt) {
 
         window.location.replace("home.html");
       } else {
-        alert("Sizda xatolik bor, iltimos qaytadan urinib ko'ring!");
+        alert("Invalid Login USERNAME or PASSWORD");
       }
     });
 })

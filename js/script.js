@@ -199,9 +199,9 @@ elSearchInput.addEventListener("change", ()=> {
     
 const localToken = window.localStorage.getItem("token");
 
-// if (!localToken) {
-//   window.location.replace("index.html");
-// }
+if (!localToken) {
+  window.location.replace("index.html");
+}
 
 elLogOutBtn.addEventListener("click", function () {
   window.localStorage.removeItem("token");
